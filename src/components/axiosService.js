@@ -1,3 +1,3 @@
 
-export const BASE_URL = "http://urlshort1-dev.eba-svf38q8a.us-east-1.elasticbeanstalk.com/";
+export const BASE_URL = "https://localhost:7186/";
 export const ShortenerUrl = "ShortenerUrl/";

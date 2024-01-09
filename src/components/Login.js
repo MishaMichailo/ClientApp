@@ -25,8 +25,10 @@ function Login() {
       .then((response) => {
         const token = response.data.token;
         const isAdmin = response.data.isAdmin;
+        const userId = response.data.userId;
         localStorage.setItem('token', token);
         localStorage.setItem('isAdmin',isAdmin)
+        localStorage.setItem('userId',userId)
         if (token){
             navigate('/urlpage', { replace: true });
         }

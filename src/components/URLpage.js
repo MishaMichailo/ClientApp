@@ -25,18 +25,20 @@ function URLpage() {
     }
     const headers = {
       "Content-Type": "application/json",
-      Authorization: "Bearer " + token,
+      "Authorization": "Bearer " + token,
     };
     return headers;
   };
+  
   useEffect(() => {
     const getRows = () => {
       const userId = localStorage.getItem("userId");
       axios
-        .get(BASE_URL + shortenedUrl + "user/" + userId, {
+        .get(BASE_URL + ShortenerUrl + "user/" + userId, {
           headers: genereteHeaders(),
         })
         .then((response) => {
+          console.log(localStorage);
           console.log(response);
           if (response.status === 200) {
             let r = response.data.rows.map(({ urlBase, urlShort }) => ({
@@ -68,7 +70,7 @@ function URLpage() {
       const userId = localStorage.getItem("userId");
       const formData = new FormData();
       formData.append("UrlBase", url);
-      formData.append("UserId", userId);
+      formData.append("userId", userId);
 
       axios
         .post(BASE_URL + ShortenerUrl + "shorturl", formData, {
@@ -80,7 +82,6 @@ function URLpage() {
             const newShortenedUrl = response.data.shortUrl;
             setShortenedUrl(newShortenedUrl);
             localStorage.setItem("shortenedUrl", newShortenedUrl);
-
             setRows((prevRows) => [
               ...prevRows,
               { urlBase: url, urlShort: newShortenedUrl },
