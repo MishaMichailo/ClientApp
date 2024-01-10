@@ -23,7 +23,7 @@ const Registration = () => {
     const { password } = formData;
 
     if (!isPasswordValid(password)) {
-      setRegistrationError('Password must be between 10 and 16 characters and contain letters.');
+      setRegistrationError('Password must be between 10 and 16 characters and contain one Upper and one Lower letters.');
       return;
     }
     axios.post(
