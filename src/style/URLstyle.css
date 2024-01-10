@@ -60,4 +60,10 @@
   .logout-container button:hover {
     color: rgb(64, 64, 66);
   }
-  
+  .row-ellipsis {
+    width: 200px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }

@@ -5,10 +5,11 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import TableContainer from "@mui/material/TableContainer";
 import axios from "axios";
 import "../style/URLstyle.css";
-import  { BASE_URL, ShortenerUrl }  from   './axiosService.js' ;
-
+import { BASE_URL, ShortenerUrl } from "./axiosService.js";
+import Paper from "@mui/material/Paper";
 
 function URLpage() {
   const [url, setUrl] = useState("");
@@ -25,11 +26,11 @@ function URLpage() {
     }
     const headers = {
       "Content-Type": "application/json",
-      "Authorization": "Bearer " + token,
+      Authorization: "Bearer " + token,
     };
     return headers;
   };
-  
+
   useEffect(() => {
     const getRows = () => {
       const userId = localStorage.getItem("userId");
@@ -120,7 +121,7 @@ function URLpage() {
 
       axios
         .post(
-           BASE_URL + ShortenerUrl + "delete",
+          BASE_URL + ShortenerUrl + "delete",
           { userId, urlBase },
           {
             headers: {
@@ -178,34 +179,37 @@ function URLpage() {
       <div className="logout-container">
         <button onClick={handleLogout}>Logout</button>
       </div>
-
-      <Table size="small">
-        <TableHead>
-          <TableRow>
-            <TableCell>#</TableCell>
-            <TableCell>baseUrl</TableCell>
-            <TableCell>shortUrl</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row, index) => (
-            <TableRow key={index + 1}>
-              <TableCell>{index + 1}</TableCell>
-              <TableCell>
-                <a href={row.urlBase}>{row.urlBase}</a>
-              </TableCell>
-              <TableCell>
-                <a href={row.urlShort}>{row.urlShort}</a>
-              </TableCell>
-              <TableCell>
-                <button onClick={() => handleRemoveUrl(row.urlBase)}>
-                  Remove
-                </button>
-              </TableCell>
+      <TableContainer component={Paper}>
+        <Table sx={{ maxWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>#</TableCell>
+              <TableCell>baseUrl</TableCell>
+              <TableCell>shortUrl</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHead>
+          <TableBody>
+            {rows.map((row, index) => (
+              <TableRow key={index + 1}>
+                <TableCell>{index + 1}</TableCell>
+                  <TableCell className="row-ellipsis">
+                    <div className="row-ellipsis">
+                    <a href={row.urlBase}>{row.urlBase}</a>
+                    </div>
+                  </TableCell>
+                  <TableCell className="row-ellipsis">
+                    <a href={row.urlShort}>{row.urlShort}</a>
+                  </TableCell>
+                <TableCell>
+                  <button onClick={() => handleRemoveUrl(row.urlBase)}>
+                    Remove
+                  </button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 }
