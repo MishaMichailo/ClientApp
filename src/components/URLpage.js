@@ -154,7 +154,7 @@ function URLpage() {
   };
 
   return (
-    <div className="app">
+    <div className="url-container">
       <div className="shortener">
         <h2>URL shortener</h2>
         <form onSubmit={handleShortenUrl}>

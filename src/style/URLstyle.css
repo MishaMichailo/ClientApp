@@ -1,33 +1,57 @@
 * {
-    box-sizing: border-box;
-  }
-  .shortener {
-    width: fit-content;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .shortener input, button {
-    height: 30px;
-    padding: 0 10px;
-  }
-  .shortener input {
-    margin-bottom: 10px;
-    border: 1px solid gray;
-    color: rgb(64, 64, 66);
-  }
-  .shortener input:focus {
-    border: 1px solid rgb(95, 180, 245);
-    outline: none;
-  }
-  .shortener form > button {
-    background-color: rgb(95, 180, 245);
-    border: none;
-    color: white;
-    margin-top: 10px;
-  }
-  .shortener form > button:hover {
-    background-color: rgb(51, 162, 246);
-  }
+  box-sizing: border-box;
+}
+
+
+
+.url-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1000px; /* Adjust the width as needed */
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.shortener {
+  width: 100%; /* Make the shortener div full-width within the url-container */
+  text-align: center;
+}
+
+.shortener input,
+.shortener button {
+  width: 100%; /* Make the input and button full-width within the shortener div */
+  height: 30px;
+  padding: 0 10px;
+}
+
+.shortener input {
+  margin-bottom: 10px;
+  border: 1px solid gray;
+  color: rgb(64, 64, 66);
+}
+
+.shortener input:focus {
+  border: 1px solid rgb(95, 180, 245);
+  outline: none;
+}
+
+.shortener form > button {
+  background-color: rgb(95, 180, 245);
+  border: none;
+  color: white;
+  margin-top: 10px;
+  width: 100px;
+  
+}
+
+.shortener form > button:hover {
+  background-color: rgb(51, 162, 246);
+}
+
   .shortener__viewShot {
     margin-top: 20px;
     border: 1px solid gainsboro;
