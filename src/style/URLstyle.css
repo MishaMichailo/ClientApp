@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1000px; /* Adjust the width as needed */
+  width: 1000px; 
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -17,13 +17,13 @@
 }
 
 .shortener {
-  width: 100%; /* Make the shortener div full-width within the url-container */
+  width: 100%; 
   text-align: center;
 }
 
 .shortener input,
 .shortener button {
-  width: 100%; /* Make the input and button full-width within the shortener div */
+  width: 100%; 
   height: 30px;
   padding: 0 10px;
 }
