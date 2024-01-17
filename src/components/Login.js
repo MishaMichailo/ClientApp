@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../style/Loginstyle.css';
 import  { BASE_URL }  from   './axiosService.js' ;
+import Clock from "./Clock.js"; 
 
 
 function Login() {
@@ -48,7 +49,7 @@ function Login() {
   return (
     <div className="login-container">
       <h2>Login</h2>
-      <div className="form-group">
+      <div className="form-group-login">
         <label>Username</label>
         <input
           type="text"
@@ -58,7 +59,7 @@ function Login() {
           required
         />
       </div>
-      <div className="form-group">
+      <div className="form-group-login">
         <label>Password</label>
         <input
           type="password"
@@ -68,12 +69,17 @@ function Login() {
           required
         />
       </div>
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin} id = "login">Login</button>
       {error && <div className="error-message">{error}</div>}
         <p>
-          Don't have an account? <span onClick={() => navigate('/registration', {replace: true})}> Register here </span>
+          Don't have an account? 
         </p>
+          <p id="registr"><span onClick={() => navigate('/registration', {replace: true})}>
+             Register here </span>
+        </p>
+        <Clock />
     </div>
+    
   );
 }
 

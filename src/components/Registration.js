@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import '../style/Loginstyle.css';
+import '../style/Registrationstyle.css';
 import  { BASE_URL }  from   './axiosService.js' ;
-
+import Clock from "./Clock.js"; 
 
 const Registration = () => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
@@ -13,6 +13,10 @@ const Registration = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+  
+  const backToLoginPage = () => {
+    navigate('/', { replace: true });
   };
 
   const isPasswordValid = (password) => {
@@ -62,9 +66,9 @@ const Registration = () => {
   };
 
   return (
-    <div>
+    <div className="registration-container">
       <h2>Registration</h2>
-      <div className="form-group">
+      <div className="form-group-registration">
         <label>Username</label>
         <input
           type="text"
@@ -74,7 +78,7 @@ const Registration = () => {
           required
         />
       </div>
-      <div className="form-group">
+      <div className="form-group-registration">
         <label>Email</label>
         <input
           type="email"
@@ -84,7 +88,7 @@ const Registration = () => {
           required
         />
       </div>
-      <div className="form-group">
+      <div className="form-group-registration">
         <label>Password</label>
         <input
           type="password"
@@ -94,12 +98,17 @@ const Registration = () => {
           required
         />
       </div>
-      <button onClick={handleRegistration}>Register</button>
+      <div className="container">
+      <button onClick ={backToLoginPage} id = "previous">Return </button>
+      <button onClick={handleRegistration} id = "registration">Register</button>
       {registrationError && (
         <div className="error-message">
           {registrationError}
         </div>
       )}
+     
+    </div>
+    <Clock />
     </div>
   );
 };
