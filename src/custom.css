@@ -1,14 +1,101 @@
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+.infoPage {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  width: 55em;
+  border: 1px solid #ccc; /* Add a border for better visibility */
+  background-color: #fff; /* Set a background color to make the content stand out */
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+.header-logo{
+  font: 900 49px asap,arial;
+    color: #0186da;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 2px #ddd;
+    word-wrap: break-word;
 }
 
-code {
-  color: #E01A76;
+
+.aligncenter {
+  text-align: center;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.icon img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
+#column {
+  float: left;
+  width: 33.33%;
+  min-height: 110px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+
+
+.infoPage h2{
+  margin: 0 0 -10px 0;
+    font: bold 26px asap,arial;
+    color: #555;
+    letter-spacing: 0;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.infoPage p{
+
+  font: 17px "source sans pro",arial;
+    color: #202020;
+    line-height: 1.5;
+    text-align: left;
+    padding: 0 0 0 2px;
+}
+
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 20px;
+  background: #333;
+}
+body {
+ 
+  height: 100vh;
+  margin: 0; /* Add this line to reset the default body margin */
+}
+footer {
+  text-align: center;
+  font: 17px "source sans pro", arial;
+  color: #eee;
+  background: #333;
+  width: 100%;
+  border-top: 4px solid #00a0db;
+  padding: 20px 0 30px;
+  line-height: 1.5;
+  margin-top: 250px;
+  
+}
+
+ li {
+  font: 17px "source sans pro",arial;
+  color: #202020;
+  line-height: 1.5;
+  display: inline;
+  margin-right: 5px; 
+  text-align: center;
+}
+ul {
+  font: 17px "source sans pro",arial;
+  color: #202020;
+  line-height: 1.5;
+  text-align: center;
+  list-style: none;
+
+}
+
+

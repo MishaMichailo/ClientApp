@@ -7,7 +7,6 @@ import DataFromDb from './DataFromDb';
 
 const AppRoutes = [
   {
-    index : true,
     path: '/',
     element: <Login/>
   },

@@ -5,6 +5,7 @@ import '../style/Registrationstyle.css';
 import  { BASE_URL }  from   './axiosService.js' ;
 import Clock from "./Clock.js"; 
 
+
 const Registration = () => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const [registrationError, setRegistrationError] = useState(null);
@@ -106,7 +107,6 @@ const Registration = () => {
           {registrationError}
         </div>
       )}
-     
     </div>
     <Clock />
     </div>

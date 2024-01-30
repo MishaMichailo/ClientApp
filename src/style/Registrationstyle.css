@@ -1,14 +1,25 @@
-.registration-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-  }
+.registrationPage img {
+  margin-top: 50px;
+  text-align: center;
+  margin-left:700px;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+.registrationPage h2 {
+  margin-top: 50px;
+  text-align: center;
+  margin-left: 10px;
+  height: auto;
+  vertical-align: middle;
+}
+.registrationPage p {
+  margin-top: 50px;
+  text-align: center;
+  margin-left: 10px;
+  height: auto;
+  vertical-align: middle;
+}
   
   h2 {
     font-size: 24px;
@@ -32,7 +43,9 @@
     font-size: 16px;
     margin-top: 5px;
   }
-  
+  .hiddenRegistration {
+    display: none;
+  }
 
   
   button:hover {
@@ -54,11 +67,28 @@
     font-size: 16px;
     margin-top: 10px;
   }
-  .container {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .registration-container {
     display: flex;
-    flex-direction: row; 
-    justify-content: space-between; 
-    width: 100%; 
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    animation: fadeIn 1s ease-in-out;
   }
 
   #previous:hover {

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate ,Link} from 'react-router-dom';
 import '../style/Loginstyle.css';
 import  { BASE_URL }  from   './axiosService.js' ;
 import Clock from "./Clock.js"; 
 
-
 function Login() {
   const [formData, setFormData] = useState({ name: '', password: '' });
   const [error, setError] = useState('');
+  const [showRegistrationContent, setShowRegistrationContent] = useState(false);
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -73,10 +73,16 @@ function Login() {
       {error && <div className="error-message">{error}</div>}
         <p>
           Don't have an account? 
-        </p>
-          <p id="registr"><span onClick={() => navigate('/registration', {replace: true})}>
-             Register here </span>
-        </p>
+       </p>
+          <Link id='link' to="/registration" onClick={() => setShowRegistrationContent(true)}>
+            <p>Register here</p>
+          </Link>
+          {showRegistrationContent && (
+      <div id="registration">
+        <h2>Registration Content</h2>
+        <p>Somethink</p>
+      </div>
+    )}
         <Clock />
     </div>
     
