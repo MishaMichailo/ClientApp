@@ -52,9 +52,11 @@
     background-color: #0056b3;
   }
   
-  .error-message {
+  .error-message-registration {
+    display: flex;
     color: red;
-    margin-top: 5px;
+   text-align: center;
+   margin-top: 15px;
   }
   button {
     display: flex;

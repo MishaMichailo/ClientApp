@@ -102,12 +102,13 @@ const Registration = () => {
       <div className="container">
       <button onClick ={backToLoginPage} id = "previous">Return </button>
       <button onClick={handleRegistration} id = "registration">Register</button>
+      </div>
       {registrationError && (
-        <div className="error-message">
+        <div className="error-message-registration">
           {registrationError}
         </div>
       )}
-    </div>
+   
     <Clock />
     </div>
   );
